@@ -1,3 +1,174 @@
+// Translations
+const translations = {
+    en: {
+        // Header
+        myTasks: 'MY TASKS',
+        xp: 'XP:',
+        tasks: 'Tasks:',
+        completed: 'Completed:',
+        achievements: 'Achievements',
+        loadFromFile: '📂 Load from File',
+        selectSaveFile: '📁 Select Save File',
+
+        // Projects
+        projects: 'PROJECTS',
+        newProject: '+ New Project',
+        noProject: 'No Project',
+        createProject: 'Create',
+        projectNamePlaceholder: 'Project name...',
+
+        // Task Input
+        taskPlaceholder: 'Write a new task...',
+        addTask: '+ Add',
+
+        // Priority
+        priorityLow: '📎 Low',
+        priorityMedium: '📌 Medium',
+        priorityHigh: '⚠️ High',
+        priorityCritical: '🔥 Critical',
+        low: 'Low',
+        medium: 'Medium',
+        high: 'High',
+        critical: 'Critical',
+
+        // Status columns
+        todoColumn: '📋 TO DO',
+        inProgressColumn: '⚒ IN PROGRESS',
+        doneColumn: '✓ DONE',
+
+        // Colors
+        colorGreen: 'Green',
+        colorBlue: 'Blue',
+        colorOrange: 'Orange',
+        colorPurple: 'Purple',
+        colorRed: 'Red',
+        colorYellow: 'Yellow',
+
+        // Achievements
+        achievementsTitle: '🏆 ACHIEVEMENTS',
+        achievementUnlocked: 'Achievement Unlocked!',
+        newProjectTitle: 'New Project',
+
+        // Achievement definitions
+        achievement_firstTask_name: 'First Steps',
+        achievement_firstTask_desc: 'Create your first task',
+        achievement_taskMaster_name: 'Task Master',
+        achievement_taskMaster_desc: 'Create 10 tasks',
+        achievement_taskLegend_name: 'Task Legend',
+        achievement_taskLegend_desc: 'Create 50 tasks',
+        achievement_firstComplete_name: 'Done!',
+        achievement_firstComplete_desc: 'Complete your first task',
+        achievement_productive_name: 'Productive',
+        achievement_productive_desc: 'Complete 10 tasks',
+        achievement_unstoppable_name: 'Unstoppable',
+        achievement_unstoppable_desc: 'Complete 50 tasks',
+        achievement_organizer_name: 'Organizer',
+        achievement_organizer_desc: 'Create your first project',
+        achievement_projectMaster_name: 'Project Master',
+        achievement_projectMaster_desc: 'Create 5 projects',
+        achievement_speedRunner_name: 'Speed Runner',
+        achievement_speedRunner_desc: 'Complete 3 tasks at once',
+        achievement_xpHunter_name: 'XP Hunter',
+        achievement_xpHunter_desc: 'Earn 500 XP',
+
+        // Alerts and confirms
+        browserNotSupported: '❌ Your browser does not support auto-save to file.\nUse Chrome, Edge or Opera.\n\nData is saved in LocalStorage.',
+        fileSelected: 'File selected',
+        autoSaveEnabled: 'All changes will now auto-save to this file!',
+        deleteProjectConfirm: 'Delete project? Tasks will not be deleted, but will lose association with the project.',
+        invalidFileFormat: '❌ Invalid file format!',
+        loadBackupConfirm: 'Load data from backup?',
+        currentDataReplaced: 'Current data will be replaced!',
+        dataLoadedSuccess: '✅ Data loaded successfully!',
+        errorLoadingFile: '❌ Error loading file!'
+    },
+    ua: {
+        // Header
+        myTasks: 'МОЇ ЗАВДАННЯ',
+        xp: 'XP:',
+        tasks: 'Завдань:',
+        completed: 'Виконано:',
+        achievements: 'Досягнення',
+        loadFromFile: '📂 Завантажити з файлу',
+        selectSaveFile: '📁 Вибрати файл збереження',
+
+        // Projects
+        projects: 'ПРОЄКТИ',
+        newProject: '+ Новий проєкт',
+        noProject: 'Без проєкту',
+        createProject: 'Створити',
+        projectNamePlaceholder: 'Назва проєкту...',
+
+        // Task Input
+        taskPlaceholder: 'Напишіть нове завдання...',
+        addTask: '+ Додати',
+
+        // Priority
+        priorityLow: '📎 Низький',
+        priorityMedium: '📌 Середній',
+        priorityHigh: '⚠️ Високий',
+        priorityCritical: '🔥 Критичний',
+        low: 'Низький',
+        medium: 'Середній',
+        high: 'Високий',
+        critical: 'Критичний',
+
+        // Status columns
+        todoColumn: '📋 ЗРОБИТИ',
+        inProgressColumn: '⚒ В РОБОТІ',
+        doneColumn: '✓ ГОТОВО',
+
+        // Colors
+        colorGreen: 'Зелений',
+        colorBlue: 'Синій',
+        colorOrange: 'Помаранчевий',
+        colorPurple: 'Фіолетовий',
+        colorRed: 'Червоний',
+        colorYellow: 'Жовтий',
+
+        // Achievements
+        achievementsTitle: '🏆 ДОСЯГНЕННЯ',
+        achievementUnlocked: 'Досягнення відкрито!',
+        newProjectTitle: 'Новий проєкт',
+
+        // Achievement definitions
+        achievement_firstTask_name: 'Перші кроки',
+        achievement_firstTask_desc: 'Створіть своє перше завдання',
+        achievement_taskMaster_name: 'Майстер завдань',
+        achievement_taskMaster_desc: 'Створіть 10 завдань',
+        achievement_taskLegend_name: 'Легенда завдань',
+        achievement_taskLegend_desc: 'Створіть 50 завдань',
+        achievement_firstComplete_name: 'Готово!',
+        achievement_firstComplete_desc: 'Виконайте своє перше завдання',
+        achievement_productive_name: 'Продуктивний',
+        achievement_productive_desc: 'Виконайте 10 завдань',
+        achievement_unstoppable_name: 'Невпинний',
+        achievement_unstoppable_desc: 'Виконайте 50 завдань',
+        achievement_organizer_name: 'Організатор',
+        achievement_organizer_desc: 'Створіть свій перший проєкт',
+        achievement_projectMaster_name: 'Майстер проєктів',
+        achievement_projectMaster_desc: 'Створіть 5 проєктів',
+        achievement_speedRunner_name: 'Спідранер',
+        achievement_speedRunner_desc: 'Виконайте 3 завдання одночасно',
+        achievement_xpHunter_name: 'Мисливець за XP',
+        achievement_xpHunter_desc: 'Заробіть 500 XP',
+
+        // Alerts and confirms
+        browserNotSupported: '❌ Ваш браузер не підтримує автозбереження у файл.\nВикористовуйте Chrome, Edge або Opera.\n\nДані зберігаються в LocalStorage.',
+        fileSelected: 'Файл обрано',
+        autoSaveEnabled: 'Всі зміни тепер автоматично зберігаються у цей файл!',
+        deleteProjectConfirm: 'Видалити проєкт? Завдання не будуть видалені, але втратять зв\'язок з проєктом.',
+        invalidFileFormat: '❌ Неправильний формат файлу!',
+        loadBackupConfirm: 'Завантажити дані з резервної копії?',
+        currentDataReplaced: 'Поточні дані будуть замінені!',
+        dataLoadedSuccess: '✅ Дані успішно завантажено!',
+        errorLoadingFile: '❌ Помилка завантаження файлу!'
+    }
+};
+
+// Current language
+let currentLanguage = 'en';
+
 // Data Storage
 let tasks = [];
 let projects = [];
@@ -27,13 +198,102 @@ const achievementDefinitions = [
     { id: 'xp-hunter', name: 'XP Hunter', description: 'Earn 500 XP', icon: '💎', requirement: () => stats.xp >= 500, xp: 0 },
 ];
 
+// Translation functions
+function t(key) {
+    return translations[currentLanguage][key] || key;
+}
+
+function applyTranslations() {
+    // Header
+    document.querySelector('.title').textContent = `⛏ ${t('myTasks')}`;
+    document.querySelectorAll('.stat-label')[0].textContent = t('xp');
+    document.querySelectorAll('.stat-label')[1].textContent = t('tasks');
+    document.querySelectorAll('.stat-label')[2].textContent = t('completed');
+
+    // Buttons with data-i18n attributes
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (key) {
+            el.textContent = t(key);
+        }
+    });
+
+    // Projects section
+    document.querySelector('.project-header h2').textContent = t('projects');
+    document.getElementById('add-project-btn').textContent = t('newProject');
+
+    // Task input
+    document.getElementById('task-input').placeholder = t('taskPlaceholder');
+    document.getElementById('add-task-btn').textContent = t('addTask');
+
+    // Priority select
+    const prioritySelect = document.getElementById('priority-select');
+    prioritySelect.options[0].text = t('priorityLow');
+    prioritySelect.options[1].text = t('priorityMedium');
+    prioritySelect.options[2].text = t('priorityHigh');
+    prioritySelect.options[3].text = t('priorityCritical');
+
+    // Status columns
+    document.querySelector('[data-status="todo"] h3').textContent = t('todoColumn');
+    document.querySelector('[data-status="in-progress"] h3').textContent = t('inProgressColumn');
+    document.querySelector('[data-status="done"] h3').textContent = t('doneColumn');
+
+    // Modals
+    document.querySelector('#achievements-modal .modal-header h2').textContent = t('achievementsTitle');
+    document.querySelector('#project-modal .modal-header h2').textContent = t('newProjectTitle');
+    document.getElementById('create-project-btn').textContent = t('createProject');
+    document.getElementById('project-name-input').placeholder = t('projectNamePlaceholder');
+
+    // Achievement notification
+    document.querySelector('.achievement-title').textContent = t('achievementUnlocked');
+
+    // Color select
+    const colorSelect = document.getElementById('project-color-input');
+    colorSelect.options[0].text = t('colorGreen');
+    colorSelect.options[1].text = t('colorBlue');
+    colorSelect.options[2].text = t('colorOrange');
+    colorSelect.options[3].text = t('colorPurple');
+    colorSelect.options[4].text = t('colorRed');
+    colorSelect.options[5].text = t('colorYellow');
+
+    // Re-render dynamic content
+    renderProjects();
+    renderAchievements();
+    updateTaskPriorityTitles();
+}
+
+function updateTaskPriorityTitles() {
+    document.querySelectorAll('.task-priority-icon').forEach(icon => {
+        const title = icon.getAttribute('title');
+        if (title) {
+            icon.setAttribute('title', t(title));
+        }
+    });
+}
+
+function changeLanguage(lang) {
+    currentLanguage = lang;
+    localStorage.setItem('language', lang);
+    applyTranslations();
+}
+
+function loadLanguage() {
+    const saved = localStorage.getItem('language');
+    if (saved && translations[saved]) {
+        currentLanguage = saved;
+        document.getElementById('language-select').value = saved;
+    }
+}
+
 // Initialize
 function init() {
+    loadLanguage();
     loadData();
     initAchievements();
     renderProjects();
     renderTasks();
     updateStats();
+    applyTranslations();
     attachEventListeners();
 }
 
@@ -75,6 +335,11 @@ function attachEventListeners() {
         document.getElementById('import-file-input').click();
     });
     document.getElementById('import-file-input').addEventListener('change', importData);
+
+    // Language selector
+    document.getElementById('language-select').addEventListener('change', (e) => {
+        changeLanguage(e.target.value);
+    });
 }
 
 // Task Management
@@ -163,7 +428,7 @@ function createProject() {
 }
 
 function deleteProject(projectId) {
-    if (!confirm('Delete project? Tasks will not be deleted, but will lose association with the project.')) return;
+    if (!confirm(t('deleteProjectConfirm'))) return;
 
     projects = projects.filter(p => p.id !== projectId);
     tasks.forEach(task => {
@@ -215,7 +480,7 @@ function renderProjects() {
     });
 
     // Update select
-    projectSelect.innerHTML = '<option value="">No Project</option>';
+    projectSelect.innerHTML = `<option value="">${t('noProject')}</option>`;
     projects.forEach(project => {
         const option = document.createElement('option');
         option.value = project.id;
@@ -263,10 +528,10 @@ function createTaskCard(task) {
 
     // Priority colors and labels
     const priorityConfig = {
-        critical: { color: '#e74c3c', label: 'CRITICAL', icon: '🔥' },
-        high: { color: '#f39c12', label: 'HIGH', icon: '⚠️' },
-        medium: { color: '#3498db', label: 'MEDIUM', icon: '📌' },
-        low: { color: '#95a5a6', label: 'LOW', icon: '📎' }
+        critical: { color: '#e74c3c', icon: '🔥' },
+        high: { color: '#f39c12', icon: '⚠️' },
+        medium: { color: '#3498db', icon: '📌' },
+        low: { color: '#95a5a6', icon: '📎' }
     };
 
     const priority = task.priority || 'medium';
@@ -277,19 +542,17 @@ function createTaskCard(task) {
         ? `<div class="task-project" style="border-color: ${project.color}">${project.name}</div>`
         : '';
 
-    const priorityTag = `<div class="task-priority" style="border-color: ${priorityInfo.color}; color: ${priorityInfo.color}">${priorityInfo.icon} ${priorityInfo.label}</div>`;
+    const priorityTag = `<span class="task-priority-icon" style="background-color: ${priorityInfo.color};" title="${priority}">${priorityInfo.icon}</span>`;
 
     card.innerHTML = `
         <div class="task-header">
+            ${priorityTag}
             <div class="task-text">${task.text}</div>
             <div class="task-actions">
                 <button class="task-btn" onclick="deleteTask(${task.id})">×</button>
             </div>
         </div>
-        <div class="task-meta">
-            ${priorityTag}
-            ${projectTag}
-        </div>
+        ${projectTag ? `<div class="task-meta">${projectTag}</div>` : ''}
     `;
 
     // Drag events
@@ -371,11 +634,19 @@ function checkAchievements() {
     }
 }
 
+function getAchievementTranslation(achievementId, type) {
+    // Convert 'first-task' to 'firstTask'
+    const camelCaseId = achievementId.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
+    const key = `achievement_${camelCaseId}_${type}`;
+    return t(key);
+}
+
 function showAchievementNotification(achievement) {
     const notification = document.getElementById('achievement-notification');
     const nameEl = notification.querySelector('.achievement-name');
 
-    nameEl.textContent = `${achievement.icon} ${achievement.name}`;
+    const translatedName = getAchievementTranslation(achievement.id, 'name');
+    nameEl.textContent = `${achievement.icon} ${translatedName}`;
     notification.classList.remove('hidden');
 
     setTimeout(() => {
@@ -393,10 +664,14 @@ function renderAchievements() {
     achievements.forEach(achievement => {
         const item = document.createElement('div');
         item.className = `achievement-item ${achievement.unlocked ? 'unlocked' : 'locked'}`;
+
+        const translatedName = getAchievementTranslation(achievement.id, 'name');
+        const translatedDesc = getAchievementTranslation(achievement.id, 'desc');
+
         item.innerHTML = `
             <div class="icon">${achievement.icon}</div>
-            <div class="name">${achievement.name}</div>
-            <div class="description">${achievement.description}</div>
+            <div class="name">${translatedName}</div>
+            <div class="description">${translatedDesc}</div>
             ${achievement.unlocked ? `<div style="margin-top: 8px; color: var(--gold-yellow); font-size: 8px;">+${achievement.xp} XP</div>` : ''}
         `;
         container.appendChild(item);
@@ -444,7 +719,7 @@ async function selectSaveFile() {
     try {
         // Check if File System Access API is supported
         if (!('showSaveFilePicker' in window)) {
-            alert('❌ Your browser does not support auto-save to file.\nUse Chrome, Edge or Opera.\n\nData is saved in LocalStorage.');
+            alert(t('browserNotSupported'));
             return;
         }
 
@@ -458,7 +733,7 @@ async function selectSaveFile() {
 
         fileHandle = handle;
         console.log('✅ Save file selected:', handle.name);
-        alert(`✅ File selected: ${handle.name}\n\nAll changes will now auto-save to this file!`);
+        alert(`✅ ${t('fileSelected')}: ${handle.name}\n\n${t('autoSaveEnabled')}`);
 
         // Save current data to the file
         await saveToFile();
@@ -505,12 +780,12 @@ function importData(event) {
 
             // Validate data
             if (!data.tasks || !data.projects || !data.stats) {
-                alert('❌ Invalid file format!');
+                alert(t('invalidFileFormat'));
                 return;
             }
 
             // Confirm import
-            if (!confirm(`Load data from backup?\n\nTasks: ${data.tasks.length}\nProjects: ${data.projects.length}\nXP: ${data.stats.xp}\n\nCurrent data will be replaced!`)) {
+            if (!confirm(`${t('loadBackupConfirm')}\n\n${t('tasks')}: ${data.tasks.length}\n${t('projects')}: ${data.projects.length}\nXP: ${data.stats.xp}\n\n${t('currentDataReplaced')}`)) {
                 return;
             }
 
@@ -538,11 +813,11 @@ function importData(event) {
             updateStats();
 
             console.log('✅ Data imported');
-            alert('✅ Data loaded successfully!');
+            alert(t('dataLoadedSuccess'));
 
         } catch (error) {
             console.error('Import error:', error);
-            alert('❌ Error loading file!');
+            alert(t('errorLoadingFile'));
         }
     };
 

@@ -39,12 +39,16 @@
                     <span id="completed-count" class="stat-value">0</span>
                 </div>
             </div>
-            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; align-items: center;">
                 <button id="achievements-btn" class="mc-button achievements-btn">
-                    🏆 Achievements (<span id="achievements-count">0</span>)
+                    🏆 <span data-i18n="achievements">Achievements</span> (<span id="achievements-count">0</span>)
                 </button>
-                <button id="import-btn" class="mc-button small">📂 Load from File</button>
-                <button id="select-file-btn" class="mc-button small">📁 Select Save File</button>
+                <button id="import-btn" class="mc-button small" data-i18n="loadFromFile">📂 Load from File</button>
+                <button id="select-file-btn" class="mc-button small" data-i18n="selectSaveFile">📁 Select Save File</button>
+                <select id="language-select" class="mc-select" style="padding: 8px 12px; font-size: 8px;">
+                    <option value="en">🇬🇧 EN</option>
+                    <option value="ua">🇺🇦 UA</option>
+                </select>
             </div>
             <input type="file" id="import-file-input" accept=".json" style="display: none;">
         </header>

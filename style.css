@@ -326,7 +326,21 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 8px;
+    gap: 8px;
+}
+
+.task-priority-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 12px;
+    flex-shrink: 0;
+    border: 2px solid rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+    cursor: help;
 }
 
 .task-text {
@@ -362,15 +376,6 @@ body {
     gap: 8px;
     margin-top: 8px;
     flex-wrap: wrap;
-}
-
-.task-priority {
-    font-size: 7px;
-    padding: 4px 8px;
-    border: 2px solid;
-    display: inline-block;
-    font-weight: bold;
-    text-transform: uppercase;
 }
 
 .task-project {
