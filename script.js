@@ -281,7 +281,10 @@ function loadLanguage() {
     const saved = localStorage.getItem('language');
     if (saved && translations[saved]) {
         currentLanguage = saved;
-        document.getElementById('language-select').value = saved;
+        const languageSelect = document.getElementById('language-select');
+        if (languageSelect) {
+            languageSelect.value = saved;
+        }
     }
 }
 
@@ -833,5 +836,10 @@ window.createProject = createProject;
 window.deleteProject = deleteProject;
 window.toggleProjectFilter = toggleProjectFilter;
 
-// Initialize app
-init();
+// Initialize app when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    // DOM already loaded
+    init();
+}
