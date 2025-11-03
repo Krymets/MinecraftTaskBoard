@@ -81,6 +81,7 @@ function attachEventListeners() {
 function addTask() {
     const input = document.getElementById('task-input');
     const projectSelect = document.getElementById('project-select');
+    const prioritySelect = document.getElementById('priority-select');
     const text = input.value.trim();
 
     if (!text) return;
@@ -89,6 +90,7 @@ function addTask() {
         id: Date.now(),
         text: text,
         status: 'todo',
+        priority: prioritySelect.value || 'medium',
         projectId: projectSelect.value ? parseInt(projectSelect.value) : null,
         createdAt: new Date().toISOString()
     };
@@ -99,6 +101,7 @@ function addTask() {
 
     input.value = '';
     projectSelect.value = '';
+    prioritySelect.value = 'medium';
 
     saveData();
     renderTasks();
@@ -223,6 +226,7 @@ function renderProjects() {
 
 function renderTasks() {
     const statuses = ['todo', 'in-progress', 'done'];
+    const priorityOrder = { critical: 0, high: 1, medium: 2, low: 3 };
 
     statuses.forEach(status => {
         const container = document.getElementById(`${status}-tasks`);
@@ -232,6 +236,13 @@ function renderTasks() {
             const statusMatch = task.status === status;
             const projectMatch = selectedProject === null || task.projectId == selectedProject;
             return statusMatch && projectMatch;
+        });
+
+        // Sort by priority (critical first)
+        filteredTasks.sort((a, b) => {
+            const priorityA = priorityOrder[a.priority || 'medium'];
+            const priorityB = priorityOrder[b.priority || 'medium'];
+            return priorityA - priorityB;
         });
 
         filteredTasks.forEach(task => {
@@ -250,10 +261,23 @@ function createTaskCard(task) {
     card.draggable = true;
     card.dataset.taskId = task.id;
 
+    // Priority colors and labels
+    const priorityConfig = {
+        critical: { color: '#e74c3c', label: 'CRITICAL', icon: '🔥' },
+        high: { color: '#f39c12', label: 'HIGH', icon: '⚠️' },
+        medium: { color: '#3498db', label: 'MEDIUM', icon: '📌' },
+        low: { color: '#95a5a6', label: 'LOW', icon: '📎' }
+    };
+
+    const priority = task.priority || 'medium';
+    const priorityInfo = priorityConfig[priority];
+
     const project = projects.find(p => p.id == task.projectId);
     const projectTag = project
         ? `<div class="task-project" style="border-color: ${project.color}">${project.name}</div>`
         : '';
+
+    const priorityTag = `<div class="task-priority" style="border-color: ${priorityInfo.color}; color: ${priorityInfo.color}">${priorityInfo.icon} ${priorityInfo.label}</div>`;
 
     card.innerHTML = `
         <div class="task-header">
@@ -262,7 +286,10 @@ function createTaskCard(task) {
                 <button class="task-btn" onclick="deleteTask(${task.id})">×</button>
             </div>
         </div>
-        ${projectTag}
+        <div class="task-meta">
+            ${priorityTag}
+            ${projectTag}
+        </div>
     `;
 
     // Drag events
