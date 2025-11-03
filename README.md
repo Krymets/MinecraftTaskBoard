@@ -77,28 +77,24 @@ Unlock 10 achievements as you use the board:
 ## 📸 Screenshots
 
 ### Main Board
-> Add your screenshot here: Show the full board with tasks in different columns
-```
-[Screenshot placeholder: tasks/screenshots/board.png]
-```
+The full Kanban board with tasks in different columns, projects filter, and stats display.
+
+![Main Board](screenshots/board.png)
 
 ### Project Management
-> Add your screenshot here: Show the project filter section
-```
-[Screenshot placeholder: tasks/screenshots/projects.png]
-```
+Organize tasks across multiple projects with custom colors and easy filtering.
+
+![Project Management](screenshots/projects.png)
 
 ### Achievement Unlocked!
-> Add your screenshot here: Show the achievement notification popup
-```
-[Screenshot placeholder: tasks/screenshots/achievement.png]
-```
+Get instant notifications when you unlock achievements as you progress.
+
+![Achievement Notification](screenshots/achievement.png)
 
 ### Achievements Gallery
-> Add your screenshot here: Show the achievements modal with locked/unlocked achievements
-```
-[Screenshot placeholder: tasks/screenshots/achievements-modal.png]
-```
+Track your progress with 10 unique achievements to unlock.
+
+![Achievements Modal](screenshots/achievements-modal.png)
 
 ---
 
