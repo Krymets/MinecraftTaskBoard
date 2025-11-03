@@ -28,6 +28,12 @@ Manage your tasks like a Minecraft pro! This project brings the beloved blocky a
 
 **🚀 Zero dependencies • 💾 Auto-save to file • 🎨 Pixel-perfect design • 🏆 10 Achievements • ⚡ Lightning fast**
 
+### 🌐 Live Demo
+
+**Try it now:** [https://krymets.github.io/MinecraftTaskBoard](https://krymets.github.io/MinecraftTaskBoard)
+
+No installation required - just open and start managing your tasks!
+
 ---
 
 ## ✨ Features
@@ -212,7 +218,7 @@ minecraft-task-board/
 ## 🎯 Roadmap
 
 - [ ] Dark mode toggle
-- [ ] Task priorities (Low/Medium/High/Critical)
+- [x] **Task priorities (Low/Medium/High/Critical)** ✅
 - [ ] Due dates with calendar picker
 - [ ] Task descriptions/notes
 - [ ] Subtasks/checklists
