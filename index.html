@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⛏ Task Board - Minecraft Edition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="minecraft-bg"></div>
+
+    <!-- Achievement Notification -->
+    <div id="achievement-notification" class="achievement-notification hidden">
+        <div class="achievement-content">
+            <div class="achievement-icon">🏆</div>
+            <div class="achievement-text">
+                <div class="achievement-title">Achievement Unlocked!</div>
+                <div class="achievement-name"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">⛏ MY TASKS</h1>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">XP:</span>
+                    <span id="xp-count" class="stat-value">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Tasks:</span>
+                    <span id="task-count" class="stat-value">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Completed:</span>
+                    <span id="completed-count" class="stat-value">0</span>
+                </div>
+            </div>
+            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                <button id="achievements-btn" class="mc-button achievements-btn">
+                    🏆 Achievements (<span id="achievements-count">0</span>)
+                </button>
+                <button id="import-btn" class="mc-button small">📂 Load from File</button>
+                <button id="select-file-btn" class="mc-button small">📁 Select Save File</button>
+            </div>
+            <input type="file" id="import-file-input" accept=".json" style="display: none;">
+        </header>
+
+        <!-- Project Selector -->
+        <div class="project-section">
+            <div class="project-header">
+                <h2>PROJECTS</h2>
+                <button id="add-project-btn" class="mc-button small">+ New Project</button>
+            </div>
+            <div id="project-list" class="project-list"></div>
+        </div>
+
+        <!-- Task Input -->
+        <div class="task-input-section">
+            <input type="text" id="task-input" class="mc-input" placeholder="Write a new task...">
+            <select id="project-select" class="mc-select">
+                <option value="">No Project</option>
+            </select>
+            <button id="add-task-btn" class="mc-button">+ Add</button>
+        </div>
+
+        <!-- Task Board -->
+        <div class="board">
+            <div class="column" data-status="todo">
+                <div class="column-header todo">
+                    <h3>📋 TO DO</h3>
+                    <span class="task-counter" id="todo-count">0</span>
+                </div>
+                <div id="todo-tasks" class="task-list"></div>
+            </div>
+
+            <div class="column" data-status="in-progress">
+                <div class="column-header in-progress">
+                    <h3>⚒ IN PROGRESS</h3>
+                    <span class="task-counter" id="in-progress-count">0</span>
+                </div>
+                <div id="in-progress-tasks" class="task-list"></div>
+            </div>
+
+            <div class="column" data-status="done">
+                <div class="column-header done">
+                    <h3>✓ DONE</h3>
+                    <span class="task-counter" id="done-count">0</span>
+                </div>
+                <div id="done-tasks" class="task-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Achievements Modal -->
+    <div id="achievements-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🏆 ACHIEVEMENTS</h2>
+                <button class="close-btn" id="close-achievements">&times;</button>
+            </div>
+            <div id="achievements-list" class="achievements-list"></div>
+        </div>
+    </div>
+
+    <!-- Add Project Modal -->
+    <div id="project-modal" class="modal hidden">
+        <div class="modal-content small">
+            <div class="modal-header">
+                <h2>New Project</h2>
+                <button class="close-btn" id="close-project-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="project-name-input" class="mc-input" placeholder="Project name...">
+                <select id="project-color-input" class="mc-select">
+                    <option value="#4CAF50">Green</option>
+                    <option value="#2196F3">Blue</option>
+                    <option value="#FF9800">Orange</option>
+                    <option value="#9C27B0">Purple</option>
+                    <option value="#F44336">Red</option>
+                    <option value="#FFEB3B">Yellow</option>
+                </select>
+                <button id="create-project-btn" class="mc-button">Create</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
