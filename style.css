@@ -602,6 +602,10 @@ body {
         margin-bottom: 15px;
     }
 
+    .header > div {
+        flex-direction: column;
+    }
+
     /* Projects section */
     .project-section {
         padding: 10px;
@@ -776,6 +780,10 @@ body {
 
     /* Language selector */
     #language-select {
+        order: -1;
+        width: auto;
+        align-self: center;
+        margin-bottom: 10px;
         font-size: 7px;
         padding: 6px 8px;
     }
