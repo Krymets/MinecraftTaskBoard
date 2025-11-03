@@ -32,3 +32,4 @@ Temporary Items
 # Optional: Keep tasks.json out of git (personal data)
 # Uncomment if you don't want to commit your personal tasks
 # tasks.json
+/DEPLOY.md
