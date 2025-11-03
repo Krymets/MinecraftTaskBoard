@@ -203,6 +203,16 @@ body {
     font-family: 'Press Start 2P', cursive;
     font-size: 10px;
     cursor: pointer;
+    line-height: 1.8;
+    height: auto;
+    min-height: 42px;
+}
+
+.mc-select option {
+    background: rgba(0,0,0,0.9);
+    color: #fff;
+    padding: 8px;
+    line-height: 1.8;
 }
 
 .mc-select:focus {
