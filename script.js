@@ -792,9 +792,17 @@ function importData(event) {
                 return;
             }
 
-            // Import data
-            tasks = data.tasks;
-            projects = data.projects;
+            // Import data with type normalization
+            tasks = data.tasks.map(task => ({
+                ...task,
+                id: typeof task.id === 'string' ? parseInt(task.id) : task.id,
+                projectId: task.projectId ? (typeof task.projectId === 'string' ? parseInt(task.projectId) : task.projectId) : null,
+                priority: task.priority || 'medium' // Add default priority if missing
+            }));
+            projects = data.projects.map(project => ({
+                ...project,
+                id: typeof project.id === 'string' ? parseInt(project.id) : project.id
+            }));
             stats = data.stats;
 
             if (data.achievements) {
